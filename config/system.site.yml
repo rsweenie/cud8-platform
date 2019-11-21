@@ -1,0 +1,14 @@
+uuid: aa0d83c8-7249-4c93-99a1-58c79bb06f47
+name: cud8-platform
+mail: ricksweenie@studiofisheye.com
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
+default_langcode: en
+_core:
+  default_config_hash: yTxtFqBHnEWxQswuWvkjE8mKw2t8oKuCL1q8KnfHuGE
