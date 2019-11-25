@@ -14,12 +14,21 @@
         "composer/installers": "^1.0.20",
         "cweagans/composer-patches": "^1.0",
         "drupal-composer/drupal-scaffold": "^2.0.1",
+        "drupal/admin_toolbar": "^2.0",
+        "drupal/block_field": "^1.0",
         "drupal/config_direct_save": "^1.0",
         "drupal/config_installer": "^1.0",
         "drupal/console": "^1",
         "drupal/core": "^8.6.15",
+        "drupal/entity_embed": "^1.0",
+        "drupal/entity_reference_revisions": "^1.7",
+        "drupal/entity_usage": "^2.0",
+        "drupal/field_group": "^3.0",
+        "drupal/linkit": "^4.3",
+        "drupal/paragraphs": "^1.10",
+        "drupal/simplify": "^1.0",
         "drush-ops/behat-drush-endpoint": "^9.3",
-        "drush/drush": "~8.3",
+        "drush/drush": "^9.7",
         "pantheon-systems/quicksilver-pushback": "^2",
         "rvtraveller/qs-composer-installer": "^1.1",
         "webflo/drupal-core-strict": "^8.6.15",
@@ -45,7 +54,7 @@
     "conflict": {
             "drupal/drupal": "*"
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true,
     "autoload": {
         "classmap": [
@@ -87,7 +96,8 @@
             "web/profiles/contrib/{$name}": ["type:drupal-profile"],
             "web/themes/contrib/{$name}": ["type:drupal-theme"],
             "drush/Commands/contrib/{$name}": ["type:drupal-drush"],
-            "web/private/scripts/quicksilver/{$name}/": ["type:quicksilver-script"]
+            "web/private/scripts/quicksilver/{$name}/": ["type:quicksilver-script"],
+            "modules/custom/{$name}": ["type:drupal-custom-module"]
         },
         "build-env": {
             "install-cms": [
