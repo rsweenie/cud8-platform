@@ -104,3 +104,6 @@ Thumbs.db
 # SASS #
 ##########
 .sass-cache
+
+# VS Code #
+/.vscode/

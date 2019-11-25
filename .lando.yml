@@ -1,0 +1,8 @@
+name: cud8-platform
+recipe: pantheon
+config:
+  framework: drupal8
+  site: cud8-platform
+  xdebug: true
+  conf:
+    php: .vscode/php.ini
