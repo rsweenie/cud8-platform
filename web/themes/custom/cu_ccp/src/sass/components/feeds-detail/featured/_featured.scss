@@ -1,0 +1,93 @@
+.attachment {
+  background: $gray9;
+  .view-cu-news-references, .view-cu-blog-references, .view-cu-event-references  {
+    .view-content {
+      @media #{$mediaMd} {
+        %h { height: 100%; }
+        @include flex();
+        margin: 0 -#{$gutter}rem;
+
+        > .views-row {
+          flex: 0 0 33.3%;
+          width: 33.3%;
+          padding: 0 #{$gutter}rem;
+
+          img {
+            width: 100%;
+            height: auto;
+          }
+
+          + .views-row {
+            border-left: 2px solid $gray6;
+          }
+
+          > .views-field {
+            @extend %h;
+            > .field-content {
+              display: block;
+              @extend %h;
+
+              > .hub-reference {
+                @extend %h;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .short-date {
+      background: $secondary;
+      color: white;
+      justify-content: center;
+      padding: .55rem 1rem;
+      margin-bottom: 2px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+
+      @media #{$mediaMd} {
+        position: absolute;
+        width: 70px;
+        min-height: 80px;
+        right: -1rem;
+        top: -1rem;
+        text-align: center; 
+        margin-bottom: 0;
+        flex-direction: column;
+      }
+
+      span {
+        font-family: $headingFF;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        padding-top: 5px;
+        line-height: 1;
+
+
+        @media #{$mediaMd} {
+          padding-top: 3px;
+        }
+      }
+
+      .month {
+        font-size: 18px;
+        padding-right: 6px;
+
+        @media #{$mediaMd} {
+          padding-right: 0;
+        }
+      }
+      
+      .day {
+        font-size: 18px;
+
+        @media #{$mediaMd} {
+          font-size: 32px;
+        }
+      }
+    }
+  }
+}

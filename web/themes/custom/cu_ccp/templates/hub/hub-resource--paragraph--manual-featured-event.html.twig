@@ -1,0 +1,42 @@
+{#
+/**
+ * @file
+ * Default theme file to display a hub_resource item.
+ *
+ * Available variables:
+ * - content: hub resource content.
+ *
+ * @see template_preprocess_hub_resource()
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+  set classes = [
+  'hub-resource',
+  'hub-resource--type-' ~ resource_type|clean_class,
+]
+%}
+
+{%
+  set fields = {
+  'field_mfse_link': content.field_mfse_link['#elements'],
+  'field_mfse_short_text': content.field_mfse_short_text,
+  'field_mfse_image': content.field_mfse_image,
+  'field_mfse_date': content.field_mfse_date['#elements'],
+} %}
+
+{% block resource %}
+  {% include '@cu2019_grad/paragraph/paragraph--manual-featured-event.html.twig' with {
+    'is_published': true,
+    'bundle': resource_bundle,
+    'content': fields,
+    'paragraph': resource_obj,
+    'mfs_icon': mfs_icon,
+    'mfs_type': mfs_type,
+    'view_mode': view_mode,
+    'start_month': start_month,
+    'start_day': start_day,
+    'multi_day': multi_day,
+  } %}
+{% endblock resource %}

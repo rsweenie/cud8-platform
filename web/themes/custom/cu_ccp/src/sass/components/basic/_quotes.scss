@@ -1,0 +1,232 @@
+/*  --------------------------------------------------------------------------  *\
+
+    TESTIMONIALS/QUOTES
+
+    Testimonials/Quotes can be used to display quoted text that has an attribution.
+
+    Typically we stylize these multiple ways on a single site showing for different
+    use cases.
+
+\*  --------------------------------------------------------------------------  */
+blockquote {
+    // // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+    // @include flexItem(0, 0, auto, 1);
+    // // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+    // margin: 0 auto #{$gutter}rem;
+    // padding: #{$gutter}rem;
+    // // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+    // background: $tertiary;
+    // color: $white;
+    // // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+    // // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+    // // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+    //
+    // @media #{$mediaFullHeader} {
+    //     padding: #{$gutter * 2}rem;
+    // }
+
+    .align-right & {
+        margin-left: 3rem;
+    }
+
+    .align-left & {
+        margin-right: 3rem;
+    }
+
+    .copy-block .embedded-entity &,
+    .cke_editable .embedded-entity &,
+    .quote-box & {
+      //color: $primary;
+      position: relative;
+      background: $gray1;
+      @import 'quotes/direction/_quote-copy';
+
+      .field--name-field-grad-quote-image {
+        display: none;
+      }
+
+      .quote {
+          font-size: 22px;
+      }
+
+      .attr {
+        font-size: 15px;
+        font-weight: 600;
+        margin-top: 2rem;
+
+        .field--name-field-quote-box-affiliation {
+            font-weight: 400;
+        }
+      }
+
+      @media #{$mediaFullHeader} {
+
+      }
+
+      /*&:before {
+        height: 100%;
+        width: 12px;
+        position: absolute;
+        left: -26px;
+        top: 0;
+        content: "";
+        background: $primaryXLt;
+
+        @media #{$mediaFullHeader} {
+          width: 19px;
+          left: -54px;
+          transition: all 10s;
+        }
+      }*/
+    }
+
+    .copy-block .embedded-entity &,
+    .cke_editable .embedded-entity & {
+      max-width: 425px;
+    }
+
+    .quote-box & {
+      margin-bottom: 0;
+      width: 100%;
+      height: 100%;
+
+      .quote-inner {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .feat-tiles & {
+        @media #{$mediaMdOnly} {
+          margin: 0;
+        }
+
+        @media #{$mediaMdMax} {
+          margin: 0;
+        }
+      }
+
+
+      &.medium-blue-background,
+      &.color1 {
+        background: $secondary;
+      }
+
+      &.dark-blue-background,
+      &.color2 {
+        background: $primary;
+      }
+    }
+
+    .feat-tiles .quote-box & {
+
+    }
+
+    .quote {
+        color: white;
+        line-height: 1.3;
+    }
+
+    .attr {
+        .copy-block .embedded-entity &, .cke_editable .embedded-entity & {
+
+        }
+        // // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+        // // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+        // // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+        // // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+        // // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+        // text-align: right;
+        // // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+        //
+        // img {
+        //     // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+        //     // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+        //     width: 40%;
+        //     height: auto;
+        //     margin: 0 #{$gutter}rem 0 0;
+        //     // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+        //     overflow: hidden;
+        //     border-radius: 100%;
+        //     // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+        //     // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+        //     // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+        // }
+        //
+        // p {
+        //     // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+        //     // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+        //     margin: 0;
+        //     // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+        //     // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+        //     // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+        //     // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+        // }
+        //
+        // small {
+        //     // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+        //     display: block;
+        //     // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+        //     margin: .5em 0 0;
+        //     // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+        //     // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT)
+        //     font-size: .75em;
+        //     font-style: italic;
+        //     // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+        //     // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+        // }
+    }
+
+    /*---------------------*\
+      IMPORT STYLES FOR VARIOUS DIRECTIONS
+
+      The default styling is for the attribution to fall under the quote.
+      The imports below will alter that.
+    \*---------------------*/
+    @import 'quotes/direction/_quote-left';
+    // @import 'quotes/direction/_quote-right';
+    // @import 'quotes/direction/_quote-bottom';
+    // /*---------------------*\
+    //   IMPORT STYLES FOR BUBBLE STYLING
+    // \*---------------------*/
+    // @import 'quotes/bubbles/_bubbles';
+    // @import 'quotes/bubbles/_bubbles-left';
+    // @import 'quotes/bubbles/_bubbles-right';
+    // @import 'quotes/bubbles/_bubbles-bottom';
+    // /*---------------------*\
+    //   IMPORT STYLES FOR SMALL VARIATION
+    // \*---------------------*/
+    // @import 'quotes/_small';
+    // @import 'quotes/bubbles/_bubbles-small';
+
+    .field--name-field-grad-quote-source-name,
+    .field--name-field-grad-quote-honorific-title {
+      display: inline;
+    }
+}
+
+.hub-resource-field--name-field-formatted-text-body {
+  blockquote {
+    width: calc(100% - 3rem);
+    margin: 2rem 0 2rem 3rem;
+    padding-left: 3rem;
+    border-left: solid 12px $primaryXLt;
+
+    p {
+      font-size: 14px;
+      line-height: 1.4;
+      color: $primary;
+    }
+
+    @media #{$mediaMd} {
+      margin: 3rem 0 3rem 4rem;
+      border-left: solid 20px $primaryXLt;
+
+      p {
+        font-size: 24px;
+        line-height: 1.5;
+      }
+    }
+  }
+}

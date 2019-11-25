@@ -1,0 +1,16 @@
+/* -------------------------- *\
+
+    Google Translate
+
+\* -------------------------- */
+.gtranslate {
+  padding-top: 1rem;
+
+  @media #{$mediaLg} {
+      padding-left: 1rem;
+  }
+
+  select {
+    color: black;
+  }
+}

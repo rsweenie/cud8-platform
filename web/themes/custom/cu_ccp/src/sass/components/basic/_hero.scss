@@ -1,0 +1,426 @@
+/*  --------------------------------------------------------------------------  *\
+
+    HEROES
+
+    Heroes are used to build the first component on each page.  This component is
+    the header for the main element of the mark-up.  So we will style the hero
+    using a <header> in the <main id="content"> tag.
+
+\*  --------------------------------------------------------------------------  */
+$triangle: 30px;
+$triangleM: 16px;
+
+.node__content > header,
+.hub-reference > header,
+.view-cu-faculty-references > header,
+.view-cu-news-references > header,
+.view-cu-blog-references > header,
+.view-cu-event-references > header,
+.view-explore-programs > header,
+.view-explore-programs-pd > header,
+header.hp_hero {
+    // POSITIONING (DISPLAY, FLEX, FLEX ITEM, POSITION, LEFT, TOP, TRANSFORM)
+
+    // BOX SIZING (WIDTH, HEIGHT, MARGIN, PADDING)
+    // BOX STYLING (OPACITY, BACKGROUND, BOX SHADOW, BORDER, BORDER RADIUS, OVERFLOW)
+
+    // FONT STYLING (FONT, FONT-FAMILY, FONT-STYLE, FONT-SIZE, LINE-HEIGHT, FONT-WEIGHT
+    // TEXT STYLING (TEXT-DECORATION, TEXT-TRANSFORM, TEXT-ALIGN, TEXT-SHADOW)
+    // OTHER (TRANSITONS, ANIMATIONS, CURSOR)
+    position: relative;
+    overflow: hidden;
+    z-index: 120;
+
+    &:after {
+      width: 150%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 100%;
+      content: "";
+      background: rgba($secondary,.65);
+      transform-origin: top right;
+      transform: skew(-45deg);
+      z-index: 90;
+    }
+
+    > div {
+
+    }
+
+    .field--name-field-interior-page-hero-img {
+      position: relative;
+      z-index: 0;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .hero_title {
+      width: 100%;
+      //position: absolute;
+      left: 0;
+      bottom: 42px;
+      background-color: $primary;
+      padding: 62px 0 25px 0;
+      z-index: 200;
+
+      @media #{$mediaFullHeader} {
+        padding: 147px 0 25px 0;
+      }
+
+      h1 {
+        margin: 0;
+        color: $white;
+
+        @media #{$mediaLg} {
+          width: 67%;
+        }
+      }
+    }
+
+    .breadcrumb {
+      height: 42px;
+      position: relative;
+      z-index: 0;
+      background-color: rgba($secondary,.85);
+      padding: 0;
+      display: flex;
+      align-items: center;
+
+      @supports (mix-blend-mode: lighten) {
+        z-index: 200;
+        mix-blend-mode: lighten;
+      }
+
+      @media #{$mediaFullHeader} {
+        height: 72px;
+      }
+    }
+
+    .hero_title,
+    .breadcrumb {
+      > div {
+        max-width: $siteWMx;
+        margin: 0 auto;
+        padding: 0 #{$gutter}rem;
+
+        @each $q in $siteWQueryList {
+            $i: index($siteWQueryList, $q);
+
+            @if $i == 1 {
+                width: nth($siteWList, $i);
+            } @else {
+                @media #{$q} {
+                    width: nth($siteWList, $i);
+                }
+            }
+        }
+      }
+    }
+
+    &.interior_page {
+      > .field {
+        height: 164px;
+        overflow: hidden;
+
+        @media #{$mediaSm} {
+          height: 320px;
+        }
+
+        @media #{$mediaFullHeader} {
+          height: 515px;
+        }
+      }
+    }
+
+    .js-background {
+      background-size: cover;
+      background-position: top center;
+
+      img {
+        @include srOnly;
+      }
+    }
+
+    &:before {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 300;
+      content: "";
+      background: linear-gradient(0deg, rgba($black,.3) 5%, $black 90%);
+      opacity: 0;
+      transition: opacity .25s;
+      pointer-events: none;
+    }
+
+    .menuhover & {
+      &:before {
+        opacity: 1;
+      }
+    }
+}
+
+header {
+  > .field,
+  > .block {
+    + .hero_title {
+      position: absolute;
+      left: 0;
+      bottom: 42px;
+      background-color: rgba($secondary,.85);
+      padding: 25px 0;
+
+      @media #{$mediaFullHeader} {
+        bottom: 72px;
+        padding: 25px 0;
+      }
+    }
+  }
+}
+
+header.hp_hero {
+  position: relative;
+  margin-bottom: 128px - $triangle;
+
+  @media #{$mediaToggleHeader} {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &:after {
+    height: calc(100% - #{$triangle});
+
+    @media #{$mediaToggleHeader} {
+      top: 33px;
+      height: calc(100% - #{$triangleM + 33px});
+    }
+  }
+}
+
+.hp_hero_tag {
+  position: relative;
+  z-index: 200;
+  width: 100%;
+  order: 2;
+
+
+  @media #{$mediaFullHeader} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+  }
+
+  > div {
+    max-width: $siteWMx;
+    margin: 0 auto;
+
+    > div {
+      padding: 25px 16px 16px 16px;
+      background: rgba($secondary,.87);
+      color: $white;
+
+      @media #{$mediaFullHeader} {
+        max-width: 545px;
+        margin: 0 25px;
+        padding: 50px 40px 50px 50px;
+      }
+    }
+
+    h1 {
+      margin: 0 0 (9 / 50) * 1em 0;
+      font-size: 34px;
+      line-height: (47 / 50) * 1em;
+
+      @media #{$mediaFullHeader} {
+        font-size: 50px;
+      }
+    }
+
+    .field--name-field-hp-hero-sub-heading {
+      font-family: $headingFF;
+      font-size: 21px;
+      line-height: 1em;
+      text-transform: uppercase;
+      font-weight: 500;
+      margin-bottom: .4em;
+      @include letterSpacing(50);
+
+      @media #{$mediaFullHeader} {
+        font-size: 36px;
+      }
+    }
+  }
+}
+
+.hp_hero_bg {
+  //height: 160px;
+  position: relative;
+  order: 1;
+  overflow: hidden;
+  //min-height: 322px;
+  max-height: 680px;
+
+  .field--name-image {
+    position: relative;
+    width: 100%;
+    padding-bottom: 50%;
+
+    @media #{$mediaFullHeader} {
+      padding-bottom: 42%;
+    }
+
+    img {
+      width: auto;
+      height: auto;
+      min-width: 100%;
+      min-height: 100%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  @media #{$mediaMd} {
+    //height: 320px;
+  }
+
+  @media #{$mediaFullHeader} {
+    //height: 680px;
+  }
+}
+
+.bg_caption {
+  position: absolute;
+  bottom: 110px;
+  right: 25px;
+  color: $white;
+  font-size: 19px;
+  font-family: $headingFF;
+  line-height: 1.2em;
+  z-index: 95;
+  text-align: right;
+
+  @media #{$mediaToggleHeader} {
+    display: none;
+  }
+
+  @media #{$mediaFullHeader} {
+    right: 55px;
+  }
+
+  a {
+    color: $white;
+
+    @include hover {
+      color: rgba($white,.7);
+    }
+  }
+}
+
+
+.hp_hero_header {
+  position: relative;
+  margin-bottom: $triangleM;
+  order: 3;
+
+  @media #{$mediaToggleHeader} {
+    background: $primary;
+    z-index: 100;
+    text-align: center;
+  }
+
+  @media #{$mediaFullHeader} {
+    margin-bottom: $triangle;
+
+    &:before {
+      width: 100vw;
+      height: 58px;
+      position: absolute;
+      top: -58px;
+      left: 0;
+      content: "";
+      background: rgba($primary,.85);
+    }
+
+    &:after {
+      width: 100vw;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: "";
+      background: $primary;
+      @supports (mix-blend-mode: screen) {
+        mix-blend-mode: screen;
+      }
+    }
+
+    @supports (mix-blend-mode: screen) {
+      z-index: 300;
+      //mix-blend-mode: screen;
+
+      &:before {
+        //background: $primary;
+      }
+    }
+  }
+
+  > div {
+      @include contentConstrain;
+  }
+}
+
+.hp_hero_header_inner {
+  position: relative;
+  margin: 0;
+  padding: 26px 16px;
+  font-size: 34px;
+  color: $white;
+  z-index: 200;
+
+  &:after {
+    width: 0;
+    height: 0;
+    position: absolute;
+    bottom: -#{$triangleM};
+    left: 50%;
+    transform: translateX(-50%);
+    content: "";
+    border-style: solid;
+    border-width: $triangleM $triangleM 0 $triangleM;
+    border-color: $primary transparent transparent transparent;
+
+    @media #{$mediaFullHeader} {
+      border-width: $triangle $triangle 0 $triangle;
+      bottom: -#{$triangle};
+      left: 115px;
+      transform: translateX(0);
+    }
+  }
+
+  div:last-child {
+    font-family: $headingFF;
+    font-size: 21px;
+    font-weight: 500;
+    @include letterSpacing(50);
+  }
+
+  @media #{$mediaFullHeader} {
+    font-size: 45px;
+    padding: 50px 25px 50px 75px;
+
+    div:last-child {
+      font-size: 36px;
+    }
+  }
+}

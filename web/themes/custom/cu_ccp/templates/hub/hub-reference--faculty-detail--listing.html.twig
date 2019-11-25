@@ -1,0 +1,32 @@
+{#
+/**
+ * @file
+ * Default theme file to display a hub_reference item.
+ *
+ * Available variables:
+ * - title: Name of the hub reference.
+ * - content: hub reference content.
+ *
+ * @see template_preprocess_hub_reference()
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+  set classes = [
+    'hub-reference',
+    'hub-reference--type-' ~ hub_reference.bundle()|clean_class,
+    not hub_reference.isPublished() ? 'hub-reference--unpublished',
+    view_mode ? 'hub-reference--view-mode-' ~ view_mode|clean_class,
+  ]
+%}
+<article{{ attributes.addClass(classes) }}>
+  {{ title_suffix.contextual_links }}
+  {% if content %}
+    {{ content|without('hub_field_hub_faculty_email','hub_field_hub_faculty_phone') }}
+    <div class="email-phone">
+      {{ content.hub_field_hub_faculty_email }}
+      {{ content.hub_field_hub_faculty_phone }}
+    </div>
+  {% endif %}
+</article>

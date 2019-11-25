@@ -1,0 +1,20 @@
+name: "CU Creighton University CMS Platform"
+type: theme
+description: "Main theme for Creighton Websites"
+core: 8.x
+base theme: classy
+libraries:
+  - cu_ccp/global-styling
+  - cu_ccp/global-scripts
+ckeditor_stylesheets:
+  - assets/css/ckeditor-styles.css
+regions:
+  header: 'Header'
+  primary_menu: 'Primary Menu'
+  util_menu: 'Utility Menu'
+  mobile_cta: 'Mobile CTAs'
+  search: 'Search'
+  content: 'Content'
+  footer_top: 'Footer Top'
+  footer_bottom: 'Footer Bottom'
+  dump: 'Everything else'

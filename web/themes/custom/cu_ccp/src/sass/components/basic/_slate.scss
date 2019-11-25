@@ -1,0 +1,59 @@
+
+.slate-form-block {
+
+  h2 {
+    font-size: 3.6rem;
+    font-family: $copyFF;
+    color: $primary;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.2;
+    position: relative;
+    padding-bottom: 1.4rem;
+    transition: color .3s ease-out;
+
+    @media #{$mediaLg} {
+      font-size: 6.2rem;
+      padding-bottom: 2.6rem;
+    }
+
+    &:after {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background-color: $tertiary;
+      width: 30px;
+      height: 5px;
+      content: '';
+
+      @media #{$mediaLg} {
+        width: 55px;
+        height: 9px;
+      }
+    }
+  }
+
+  p {
+    font-size: 1.6rem;
+    font-family: $copyFF;
+    color: $gray2;
+    line-height: 1.5;
+    margin-bottom: 1.4rem;
+
+    @media #{$mediaLg} {
+      font-size: 1.9rem;
+      line-height: 1.2;
+      margin-bottom: 3.6rem;
+    }
+  }
+
+  div.field__item {
+    width: 100%;
+
+    @media #{$mediaLg} {
+      width: 65.33%;
+      margin: auto;
+    }
+  }
+
+}

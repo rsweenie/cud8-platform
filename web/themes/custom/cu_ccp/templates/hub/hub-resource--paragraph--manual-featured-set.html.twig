@@ -1,0 +1,32 @@
+{#
+/**
+ * @file
+ * Default theme file to display a hub_resource item.
+ *
+ * Available variables:
+ * - content: hub resource content.
+ *
+ * @see template_preprocess_hub_resource()
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+  set classes = [
+  'hub-resource',
+  'hub-resource--type-' ~ resource_type|clean_class,
+]
+%}
+
+{%
+ set fields = {
+  'field_mfs_name': content.field_mfs_name,
+  'field_mfs_featured_items': content.field_mfs_featured_items,
+} %}
+{% block resource %}
+  {% include '@cu2019_grad/paragraph/paragraph--manual-featured-set.html.twig' with {
+    'is_published': true,
+    'bundle': resource_bundle,
+    'content': fields
+  } %}
+{% endblock resource %}

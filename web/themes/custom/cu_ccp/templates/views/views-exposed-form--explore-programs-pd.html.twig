@@ -1,0 +1,48 @@
+{#
+/**
+ * @file
+ * Default theme implementation of a views exposed form.
+ *
+ * Available variables:
+ * - form: A render element representing the form.
+ *
+ * @see template_preprocess_views_exposed_form()
+ *
+ * @ingroup themeable
+ */
+#}
+{% if q is not empty %}
+  {#
+    This ensures that, if clean URLs are off, the 'q' is added first,
+    as a hidden form element, so that it shows up first in the POST URL.
+  #}
+{{ q }}
+{% endif %}
+<div class="filter-wrap">
+  <div class="filter-search">
+    <span class="icon icon-search"></span>
+    {{ form.search }}
+    {{ form|without('search', 'type', 'interests', 'method', 'sort_bef_combine') }}
+    <span class="icon icon-search"></span>
+  </div>
+{{ attach_library('cu2019_grad/filters') }}
+  <div class="programs">
+    <button id="acc1Sect0Toggle" aria-expanded="false" aria-controls="acc1Sect0" type="button" role="button" aria-pressed="false" tabindex="0">{{ form.type['#title'] }}</button>
+    <button id="acc1Sect1Toggle" aria-expanded="false" aria-controls="acc1Sect1" type="button" role="button" aria-pressed="false" tabindex="0">{{ form.interests['#title'] }}</button>
+    <button id="acc1Sect2Toggle" aria-expanded="false" aria-controls="acc1Sect2" type="button" role="button" aria-pressed="false" tabindex="0">{{ form.method['#title'] }}</button>
+  </div>
+</div>
+<div class="program-filters">
+  <div id="acc1Sect0" aria-labelledby="acc1Sect0Toggle" hidden>
+    {{ form.type }}
+  </div>
+  <div id="acc1Sect1" aria-labelledby="acc1Sect1Toggle" hidden>
+    {{ form.interests }}
+  </div>
+  <div id="acc1Sect2" aria-labelledby="acc1Sect2Toggle" hidden>
+    {{ form.method }}
+  </div>
+</div>
+<div class="sort">
+  {{ form.sort_bef_combine }}
+</div>

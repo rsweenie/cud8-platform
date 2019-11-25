@@ -1,0 +1,36 @@
+{#
+/**
+ * @file
+ * Default theme file to display a hub_resource_field item.
+ *
+ * Available variables:
+ * - content: hub resource content.
+ *
+ * @see template_preprocess_hub_resource_field()
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+  set classes = [
+  'hub-resource-field',
+  'hub-resource-field--name-' ~ field_name|clean_class,
+  'hub-resource-field--type-' ~ field_type|clean_class,
+  'hub-resource-field--label-' ~ label_display,
+]
+%}
+{%
+  set title_classes = [
+  'hub-resource-field__label',
+  label_display == 'visually_hidden' ? 'visually-hidden',
+]
+%}
+
+{% include '@cu2019_grad/field/field--field-mfs-name.html.twig' with {
+  'label_hidden': label_hidden,
+  'multiple': multiple,
+  'field_name': field_name,
+  'field_type': field_type,
+  'label_display': label_display,
+  'items': items,
+} %}

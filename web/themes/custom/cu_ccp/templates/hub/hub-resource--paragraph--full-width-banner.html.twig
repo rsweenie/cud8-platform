@@ -1,0 +1,43 @@
+{#
+/**
+ * @file
+ * Default theme file to display a hub_resource item.
+ *
+ * Available variables:
+ * - content: hub resource content.
+ *
+ * @see template_preprocess_hub_resource()
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+  set classes = [
+    'hub-resource',
+    'hub-resource--type-' ~ resource_type|clean_class,
+    'section',
+    'fwb',
+    'bg-gray4'
+  ]
+%}
+{% block resource %}
+  <section{{ attributes.addClass(classes) }}</section>
+    <div>
+      {% block content %}
+        {% include '@cu2019_grad/components/card.html.twig' with {
+          'wrapper_class': 'full-screen',
+          'image': content.field_fwb_image,
+          'title': content.field_fwb_title,
+          'subtitle': content.field_fwb_title2,
+          'body': content.field_fwb_body,
+          'class': 'img-side',
+          'button': {
+            'url': content.field_fwb_cta[0]['#url'],
+            'title': content.field_fwb_cta[0]['#title'],
+            'class': 'btn-secondary'
+          }
+        } %}
+      {% endblock %}
+    </div>
+  </section>
+{% endblock resource %}
