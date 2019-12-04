@@ -1,0 +1,42 @@
+uuid: 7a6c5744-db0c-4e83-8e9e-bc389b775cb0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.link.field_file
+    - field.field.taxonomy_term.link.field_link
+    - taxonomy.vocabulary.link
+  module:
+    - file
+    - link
+id: taxonomy_term.link.default
+targetEntityType: taxonomy_term
+bundle: link
+mode: default
+content:
+  field_file:
+    weight: 2
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  field_link:
+    weight: 1
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  description: true
+  path: true

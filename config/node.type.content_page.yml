@@ -1,0 +1,18 @@
+uuid: db3bc868-8a3b-4103-acf9-d2eb6760b234
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'Content Page'
+type: content_page
+description: 'This is a generic content page.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

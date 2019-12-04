@@ -1,0 +1,31 @@
+uuid: 77f41ba5-937b-498e-a95f-0847ea40f7fa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.quote.field_quote_text
+    - taxonomy.vocabulary.quote
+id: taxonomy_term.quote.default
+targetEntityType: taxonomy_term
+bundle: quote
+mode: default
+content:
+  field_quote_text:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  description: true
+  path: true

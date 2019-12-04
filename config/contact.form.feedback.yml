@@ -1,4 +1,4 @@
-uuid: 5ee5a7bc-de8f-4ab4-8d4e-67166eaf5c39
+uuid: a84e652a-73fc-4fcb-8dd0-fbf7cf37f4f0
 langcode: en
 status: true
 dependencies: {  }
@@ -7,7 +7,7 @@ _core:
 id: feedback
 label: 'Website feedback'
 recipients:
-  - ricksweenie@studiofisheye.com
+  - maxmccoy@creighton.edu
 reply: ''
 weight: 0
 message: 'Your message has been sent.'

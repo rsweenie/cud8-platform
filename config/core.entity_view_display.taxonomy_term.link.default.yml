@@ -1,0 +1,45 @@
+uuid: 174d5571-3190-4479-aaf0-f67266c69a3c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.link.field_file
+    - field.field.taxonomy_term.link.field_link
+    - taxonomy.vocabulary.link
+  module:
+    - file
+    - link
+    - text
+id: taxonomy_term.link.default
+targetEntityType: taxonomy_term
+bundle: link
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_file:
+    weight: 2
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    type: file_default
+    region: content
+  field_link:
+    weight: 1
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+hidden: {  }
