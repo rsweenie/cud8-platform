@@ -1,8 +1,0 @@
-uuid: 7d5aa01e-6f9e-4eab-812f-a81cdd57498c
-langcode: en
-status: true
-dependencies: {  }
-name: Quote
-vid: quote
-description: 'This is a Quote'
-weight: 0

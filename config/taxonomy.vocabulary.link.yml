@@ -1,8 +1,0 @@
-uuid: ffc100de-9707-49ac-9e0d-dded47f3d9a5
-langcode: en
-status: true
-dependencies: {  }
-name: Link
-vid: link
-description: 'This is a single link that could be used in Featured Links, or other places'
-weight: 0
