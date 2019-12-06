@@ -1,0 +1,8 @@
+uuid: 911285bb-96de-4d08-a6d3-ff97d546053b
+langcode: en
+status: true
+dependencies: {  }
+name: Accordion
+vid: accordion
+description: 'Content modules that help to organize content in an expandable accordion'
+weight: 0

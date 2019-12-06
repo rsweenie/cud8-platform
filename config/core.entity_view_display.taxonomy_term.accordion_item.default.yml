@@ -1,0 +1,29 @@
+uuid: 408e9a85-3edc-4af1-9674-833ada32dd04
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.accordion_item.field_body
+    - taxonomy.vocabulary.accordion_item
+  module:
+    - text
+id: taxonomy_term.accordion_item.default
+targetEntityType: taxonomy_term
+bundle: accordion_item
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_body:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden: {  }

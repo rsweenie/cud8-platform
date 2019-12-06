@@ -1,0 +1,30 @@
+uuid: 4ed58f5b-072c-472e-b648-7e65f912df35
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - taxonomy
+id: taxonomy_term.field_display_type
+field_name: field_display_type
+entity_type: taxonomy_term
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: accordion
+      label: Accordion
+    -
+      value: tab_side
+      label: 'Side Tab'
+    -
+      value: tab_top
+      label: 'Top Tab'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

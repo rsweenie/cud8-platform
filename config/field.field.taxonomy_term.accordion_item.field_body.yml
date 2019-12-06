@@ -1,0 +1,22 @@
+uuid: ba26f46b-45d2-409f-9245-0682a9d56a86
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_body
+    - taxonomy.vocabulary.accordion_item
+  module:
+    - text
+id: taxonomy_term.accordion_item.field_body
+field_name: field_body
+entity_type: taxonomy_term
+bundle: accordion_item
+label: Body
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+field_type: text_with_summary

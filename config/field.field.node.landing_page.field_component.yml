@@ -1,0 +1,31 @@
+uuid: 64ae4ddf-a035-4b15-b904-6d8a5c6a3f21
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_component
+    - node.type.landing_page
+    - taxonomy.vocabulary.accordion
+    - taxonomy.vocabulary.quote
+id: node.landing_page.field_component
+field_name: field_component
+entity_type: node
+bundle: landing_page
+label: Component
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      accordion: accordion
+      quote: quote
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: accordion
+field_type: entity_reference

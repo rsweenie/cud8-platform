@@ -1,0 +1,21 @@
+uuid: 6a3daa8f-7e81-492e-b306-00e9d9b27e10
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_display_type
+    - taxonomy.vocabulary.accordion
+  module:
+    - options
+id: taxonomy_term.accordion.field_display_type
+field_name: field_display_type
+entity_type: taxonomy_term
+bundle: accordion
+label: 'Display Type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string
