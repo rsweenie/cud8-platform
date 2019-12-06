@@ -1,0 +1,8 @@
+uuid: 25023618-5450-4666-ba31-dc402d3d9cc7
+langcode: en
+status: true
+dependencies: {  }
+name: Quote
+vid: quote
+description: 'A Quote '
+weight: 0

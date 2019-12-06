@@ -1,0 +1,29 @@
+uuid: 1640ad80-e264-4e07-8ce3-788a761248ff
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_content
+    - taxonomy.vocabulary.accordion
+    - taxonomy.vocabulary.accordion_item
+id: taxonomy_term.accordion.field_content
+field_name: field_content
+entity_type: taxonomy_term
+bundle: accordion
+label: Content
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      accordion_item: accordion_item
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

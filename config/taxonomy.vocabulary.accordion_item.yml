@@ -1,0 +1,8 @@
+uuid: b1c9ab3d-c45b-4a57-91b0-cb13b4470ff4
+langcode: en
+status: true
+dependencies: {  }
+name: 'Accordion Item'
+vid: accordion_item
+description: 'A single item to be used in an Accordion'
+weight: 0
